@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+// ISO 3166-1 database generator tool
+
+// The MIT License (MIT)
+
+// Copyright (c) 2015 Michael Scott Hertzberg
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+var csv2       = require('csv2')
+var es         = require('event-stream')
+var fs         = require('fs')
+var hyperquest = require('hyperquest')
+var json       = require('jsonstream2')
+var path       = require('path')
+var size       = require('file-size')
+var through2   = require('through2')
+var zlib       = require('zlib')
+
+var countries  = []
+
+hyperquest('https://raw.githubusercontent.com/datasets/country-codes/master/data/country-codes.csv')
+  .pipe(csv2())
+  .pipe(through2.obj(function(chunk, enc, cb) {
+    this.push({
+      alpha2: chunk[2],
+      alpha3: chunk[3]
+    })
+    cb()
+  }))
+  .on('data', function(data) {
+    countries.push(data)
+  })
+  .on('end', function() {
+    var output = path.join(__dirname, '../', 'data/countries.json.gz')
+    return es.readArray(countries)
+    .pipe(json.stringify())
+    .pipe(zlib.createGzip())
+    .pipe(fs.createWriteStream(output))
+    .on('finish', function() {
+      console.log('OK. Built!', size(fs.statSync(output).size).human('SI'))
+    })
+  })
