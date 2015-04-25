@@ -1,8 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var ISO3166 = require('./src/index.js');
+(function (global){
+module.exports = global.ISO3166 = require('./src/index.js')
 
-module.exports = ISO3166;
-
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./src/index.js":41}],2:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
@@ -11772,32 +11772,55 @@ var ISOCodes = require('./read-data')
 module.exports = (function() {
   var state = ''
 
-  var to2 = function() {
+  /**
+   * [to2 description]
+   * @return {[type]} [description]
+   */
+  var to2 = function to2() {
     if (state.length !== 3) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha3 === state
     })[0].alpha2
   }
 
-  var to3 = function() {
+  /**
+   * [to3 description]
+   * @return {[type]} [description]
+   */
+  var to3 = function to3() {
     if (state.length !== 2) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha2 === state
     })[0].alpha3
   }
 
-  var from = function(code) {
-    state = code
+  /**
+   * [from description]
+   * @param  {[type]} code [description]
+   * @return {[type]}      [description]
+   */
+  var from = function from(code) {
+    if (typeof code !== 'string') return state;
+    state = code.toUpperCase()
     return this
   }
 
-  var fromLocale = function(locale) {
+  /**
+   * [fromLocale description]
+   * @param  {[type]} locale [description]
+   * @return {[type]}        [description]
+   */
+  var fromLocale = function fromLocale(locale) {
     if (typeof locale !== 'string') return state;
     state = locale.split('-').pop().toUpperCase()
     return this
   }
 
-  var list = function() {
+  /**
+   * [list description]
+   * @return {[type]} [description]
+   */
+  var list = function list() {
     return ISOCodes
   }
 
@@ -11813,12 +11836,12 @@ module.exports = (function() {
 },{"./read-data":42}],42:[function(require,module,exports){
 (function (Buffer){
 
-var zlib = require('zlib')
-var path = require('path')
+var gunzip = require('zlib').gunzipSync
+var join   = require('path').join
 
 module.exports = (function() {
   var out = Buffer("H4sIAAAAAAAAA22Zu5LcNhREc33GxlIgbZUCZyRIghwCHCwBcnbG5UCZAwfOXf53l8rJnjlKtS3i3u6+jcf8/umflx9//f3nj28vv70s9fr69fv3L1+/dD//6cu3l8////H1F398ffn30+eP/7ubPsK7KQqQAEj9M2B4fAQMj05fqPhCzQIMAGyDAFcA4lWABYDFNbwB0AyIBJiHHYDdgEyA27wB0N8EOAA4qgCNgCYAtOge4zOghxb9rCX6mYBdAIjVR4nV9wDsMkx/ByB5iRGAMQnw4BceAlz4hU0AiNXnQwBQ3Td/AZ7sry7yjTWY6g6AZRYAhulvMm1/AnDKD/1OLfSFBV0sV39h4xfMQ6QfrCYSpp/cBYa3H5ZnwApPrrMmK0DNkFVDANWhUxcBTIZyqgaYNtxdw8QlpmdAw+C0oMEJSNowy1FhI8BdvAPwbh4CAGEVAH4IdvVKqq/mIRKgnAwDAeZhJcBFwtVhl2FmAOZdagYkbTiUUeFGgLI6PPmhCICMCo7iANuHRUUO4GHYxMOAlBsu4mGAWEPW6A2Qe7CaIwwzBuXkCLnHeH8GVExWTWozIifj9qYloOZouUfsF2NViI0I87EpaSdQPSVRPYGoadcJZIIWk7WYIPe0aHinnUtIrIiEiYcSpgBQ7o4gHvaaABE5GTvNRYSjYjYAWsRRRA0ADKMcFZH2cTYPYDIurgFMxj0IkAhQysWBAGVULAAkjX88KJYmK8KTsRmAyYqerLiRBzkq3jhZJurOIrXEjCLn5qSFH+Ysok446uw0mzO6mH34nzGb86oNZQbV8yEeFhx6lyq5F9SwuIYFflgGLwHLLT4mLW8EKOWWkQAXCaqX7CUS29Tuv0DNxZegC5a4dPLkBba/FNVwQReXUY66IEgvVxW5Yt9cO53tVyyx+my/Ih/WxUugi7Ir7Veouf6iSEzWepOrVwzvGtVFwlykTjmZsG+mU2Il3LNSLx4SbJ+ql9j5BbWZ7gRIzQSq06JDToLlUlPaJwxvOt6fARmGyZ3CPCMf8qrhzdAiDwqQDDXzTSmXwUO+6yqXTy6hQ07GbObkJRoBclTGtph9O8hImNyUMBly591LQIvs94c7i7z7C7iA5FFqTkiYyW9BeSCTsn3GiTQHuTojzPNmuUcCZNqMwckO0tzRkwYgxPJV45/BQ/aNdcMSm6N4g5rbrsnakHJbkWE2eHJLGpwNVG/BX0Cb28MA5MO2aHg3aLGN5gHDu0X5YTu4hHnAoXeblPa50A86y22IoM3bwRVqXr01F2RU6VRDQQSVpPtmgSdLlWlLxyVcA5gsnouClCu70r5ArGKxCjKqOKMKZrMEFwlPFr8/lMYiFUFlJ0BJ+wai3nwi3SH3fpWjdlhud07uUHP3w90OJndfgnrw0CeNfwXV1W9BK6heN58fMN0pOGkxONkvWgW2r0VFnljiDKL6BlffvB1ULuGcrPBDbRreCrlrJ6oriKo+T+4osvpBu6LNelfKVahZk4a3YjZrdBfYWOu7iULC1FMJUxcC1GbtWaTbxFxUPxY9QPXDholkMmpwKgFVW9IIwFhFVAIPaZWrKw4Y1Ve5igCphy2Hp556sRbYFutNu38dCfDbIKY7zDbMnZZTkQ0R1G5qs6GLdpFhGrpo/l2vocjmh5oG27ckuRts3/y7XoOabdV20ODJdnWbyIfWvATGv/n1oO0EmOrMIuWHhnxoTtp2cgldHw4QdfgUdGD0jlVFdrBct8tREeMffRk8MHpHdQ3g4cjaeQ+Y9vAB44Dljoci6MTOe/oH0BNtng7zE3Kfm/csUH1G14AgPf28cMO+eUuKwRGDM1Y9R9/RxX100oLqh59hHxj/hxOmw4bSpZ9q/vHpP8LkDhFZIAAA","base64")
-  return JSON.parse(zlib.gunzipSync(out).toString())
+  return JSON.parse(gunzip(out).toString())
 })()
 
 }).call(this,require("buffer").Buffer)

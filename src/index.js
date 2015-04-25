@@ -3,32 +3,55 @@ var ISOCodes = require('./read-data')
 module.exports = (function() {
   var state = ''
 
-  var to2 = function() {
+  /**
+   * [to2 description]
+   * @return {[type]} [description]
+   */
+  var to2 = function to2() {
     if (state.length !== 3) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha3 === state
     })[0].alpha2
   }
 
-  var to3 = function() {
+  /**
+   * [to3 description]
+   * @return {[type]} [description]
+   */
+  var to3 = function to3() {
     if (state.length !== 2) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha2 === state
     })[0].alpha3
   }
 
-  var from = function(code) {
-    state = code
+  /**
+   * [from description]
+   * @param  {[type]} code [description]
+   * @return {[type]}      [description]
+   */
+  var from = function from(code) {
+    if (typeof code !== 'string') return state;
+    state = code.toUpperCase()
     return this
   }
 
-  var fromLocale = function(locale) {
+  /**
+   * [fromLocale description]
+   * @param  {[type]} locale [description]
+   * @return {[type]}        [description]
+   */
+  var fromLocale = function fromLocale(locale) {
     if (typeof locale !== 'string') return state;
     state = locale.split('-').pop().toUpperCase()
     return this
   }
 
-  var list = function() {
+  /**
+   * [list description]
+   * @return {[type]} [description]
+   */
+  var list = function list() {
     return ISOCodes
   }
 

@@ -35,7 +35,6 @@
     "hyperquest": "^1.2.0",
     "jest-cli": "^0.4.0",
     "jsonstream2": "^1.1.0",
-    "lodash": "^3.7.0",
     "through2": "^0.6.5",
     "uglifyjs": "^2.4.10"
   },
@@ -45,8 +44,7 @@
     ]
   },
   "scripts": {
-    "build": "browserify index.js > build/iso3166-1.js",
-    "build:min": "browserify index.js > build/iso3166-1.js | uglifyjs --screw-ie8 -c -m > build/iso3166-1.min.js",
+    "build": "browserify index.js > build/iso3166-1.js | uglifyjs --screw-ie8 -c -m > build/iso3166-1.min.js",
     "generate": "bin/generate"
   }
 }
