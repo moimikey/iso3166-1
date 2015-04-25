@@ -1,8 +1,8 @@
-var fs   = require('fs')
-var zlib = require('zlib')
-var path = require('path')
+var read   = require('fs').readFileSync
+var gunzip = require('zlib').gunzipSync
+var join   = require('path').join
 
 module.exports = (function() {
-  var out = fs.readFileSync(path.join(__dirname, '../', 'data/countries.json.gz'))
-  return JSON.parse(zlib.gunzipSync(out).toString())
+  var out = read(join(__dirname, '../', 'data/countries.json.gz'))
+  return JSON.parse(gunzip(out).toString())
 })()
