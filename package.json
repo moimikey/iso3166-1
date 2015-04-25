@@ -28,6 +28,7 @@
   "homepage": "https://github.com/moimikey/iso3166-1",
   "devDependencies": {
     "JSONStream": "^0.10.0",
+    "browserify": "^9.0.8",
     "csv2": "^0.1.1",
     "event-stream": "^3.3.0",
     "file-size": "^1.0.0",
@@ -35,6 +36,17 @@
     "jest-cli": "^0.4.0",
     "jsonstream2": "^1.1.0",
     "lodash": "^3.7.0",
-    "through2": "^0.6.5"
+    "through2": "^0.6.5",
+    "uglifyjs": "^2.4.10"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "scripts": {
+    "build": "browserify index.js > build/iso3166-1.js",
+    "build:min": "browserify index.js > build/iso3166-1.js | uglifyjs > build/iso3166-1.min.js",
+    "generate": "bin/generate"
   }
 }

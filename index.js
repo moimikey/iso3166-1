@@ -1,2 +1,3 @@
-var iso3166 = require('./src/index.js');
-module.exports = iso3166;
+var ISO3166 = require('./src/index.js');
+
+module.exports = ISO3166;
