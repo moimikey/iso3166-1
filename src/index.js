@@ -1,4 +1,9 @@
-var ISOCodes = require('./read-data')
+var read   = require('fs').readFileSync
+var gunzip = require('zlib-browserify').gunzipSync
+var join   = require('path').join
+
+var countries = read(join(__dirname, '../data', '/countries.json.gz'))
+var ISOCodes  = JSON.parse(gunzip(countries).toString())
 
 module.exports = (function() {
   var state = ''

@@ -27,7 +27,8 @@
     "hyperquest": "^1.2.0",
     "jest-cli": "^0.4.0",
     "jsonstream2": "^1.1.0",
-    "through2": "^0.6.5"
+    "through2": "^0.6.5",
+    "zlib-browserify": "^0.0.3"
   },
   "optionalDependencies": {
     "browserify": "^9.0.8",
