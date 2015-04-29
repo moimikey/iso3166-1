@@ -3,12 +3,6 @@
   "version": "0.1.1-beta",
   "description": "Tiny, fast, modular ISO 3166-1 parser.",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "jest"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/moimikey/iso3166-1.git"
@@ -47,6 +41,14 @@
   },
   "scripts": {
     "build": "browserify index.js > build/iso3166-1.js | uglifyjs --screw-ie8 -c -m > build/iso3166-1.min.js",
-    "generate": "bin/generate"
+    "generate": "bin/generate",
+    "test": "jest"
+  },
+  "jest": {
+    "rootDir": "src",
+    "testPathIgnorePatterns": [
+      "/__tests__/[^/]*/.+",
+      "node_modules"
+    ]
   }
 }
