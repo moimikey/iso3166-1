@@ -1,1 +1,1 @@
-module.exports = global.ISO3166 = require('./src/index.js')
+module.exports = require('./src/index.js')
