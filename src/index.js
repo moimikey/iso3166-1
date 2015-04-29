@@ -5,7 +5,7 @@ var join   = require('path').join
 var countries = read(join(__dirname, '../data', '/countries.json.gz'))
 var ISOCodes  = JSON.parse(gunzip(countries).toString())
 
-module.exports = (function() {
+module.exports = (function iso3166() {
   var state = ''
 
   /**
