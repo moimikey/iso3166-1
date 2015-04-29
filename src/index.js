@@ -24,7 +24,7 @@ module.exports = (function iso3166() {
    * [to3 description]
    * @return {[type]} [description]
    */
-  var to3 = function to3(alpha3) {
+  var to3 = function to3(alpha2) {
     if (alpha2 && alpha2.length > 1) state = alpha2
     if (state.length !== 2) return state;
     return ISOCodes.filter(function(row) {
