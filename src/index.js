@@ -12,8 +12,8 @@ module.exports = (function iso3166() {
    * [to2 description]
    * @return {[type]} [description]
    */
-  var to2 = function to2(alpha2) {
-    if (alpha2 && alpha2.length > 1) state = alpha2
+  var to2 = function to2(alpha3) {
+    if (alpha3 && alpha3.length > 1) state = alpha3
     if (state.length !== 3) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha3 === state
@@ -25,7 +25,7 @@ module.exports = (function iso3166() {
    * @return {[type]} [description]
    */
   var to3 = function to3(alpha3) {
-    if (alpha3 && alpha3.length > 1) state = alpha3
+    if (alpha2 && alpha2.length > 1) state = alpha2
     if (state.length !== 2) return state;
     return ISOCodes.filter(function(row) {
       return row.alpha2 === state
