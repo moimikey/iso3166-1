@@ -1,8 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function (global){
-module.exports = global.ISO3166 = require('./src/index.js')
+module.exports = require('./src/index.js')
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./src/index.js":10}],2:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
@@ -2072,54 +2070,64 @@ module.exports = (function iso3166() {
   var state = ''
 
   /**
-   * [to2 description]
-   * @return {[type]} [description]
+   * Convert an ISO 3166-1 alpha-3 code to alpha-2
+   *
+   * @param  {String} alpha3 USA
+   * @return {String}
    */
   var to2 = function to2(alpha3) {
     if (alpha3 && alpha3.length > 1) state = alpha3
-    if (state.length !== 3) return state;
+    if (state.length !== 3) return state
     return ISOCodes.filter(function(row) {
       return row.alpha3 === state
     })[0].alpha2
   }
 
   /**
-   * [to3 description]
-   * @return {[type]} [description]
+   * Convert an ISO 3166-1 alpha-2 code to alpha-3
+   *
+   * @param  {String} alpha2 US
+   * @return {String}
    */
-  var to3 = function to3(alpha3) {
+  var to3 = function to3(alpha2) {
     if (alpha2 && alpha2.length > 1) state = alpha2
-    if (state.length !== 2) return state;
+    if (state.length !== 2) return state
     return ISOCodes.filter(function(row) {
       return row.alpha2 === state
     })[0].alpha3
   }
 
   /**
-   * [from description]
-   * @param  {[type]} code [description]
-   * @return {[type]}      [description]
+   * Prepare an ISO 3166-1 alpha-2 or alpha-3 code
+   * for conversion.
+   *
+   * @param  {String} code USA
+   * @return {Function}
    */
   var from = function from(code) {
-    if (typeof code !== 'string') return state;
+    if (typeof code !== 'string') return state
     state = code.toUpperCase()
     return this
   }
 
   /**
-   * [fromLocale description]
-   * @param  {[type]} locale [description]
-   * @return {[type]}        [description]
+   * Prepare an ISO 3166-1 alpha-2 and ISO 639-1 pair
+   * for conversion.
+   *
+   * @param  {String} locale en-US
+   * @return {Function}
    */
   var fromLocale = function fromLocale(locale) {
-    if (typeof locale !== 'string') return state;
+    if (typeof locale !== 'string') return state
     state = locale.split('-').pop().toUpperCase()
     return this
   }
 
   /**
-   * [list description]
-   * @return {[type]} [description]
+   * Return an Object containing key/val pair of
+   * ISO 3166-1 alpha-2 and alpha-3 codes.
+   *
+   * @return {Object}
    */
   var list = function list() {
     return ISOCodes
