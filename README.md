@@ -3,10 +3,12 @@ The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser
 
 ## it's totally small!
 ```
-$ browserify iso3166-1.js | uglifyjs | wc -c | numfmt --to=iec --suffix=B --format="%3f"
-63KB
 $ browserify iso3166-1.js | wc -c | numfmt --to=iec --suffix=B --format="%3f"
 81KB
+$ browserify iso3166-1.js | uglifyjs | wc -c | numfmt --to=iec --suffix=B --format="%3f"
+63KB
+$ browserify iso3166-1.js | uglifyjs - --screw-ie8 --compress --mangle | yuicompressor --type js -o iso3166-1.js && cat iso3166-1.js | wc -c | numfmt --to=iec --suffix=B --format="%3f"
+51KB
 ```
 ## with over 240 countries and completely update to date with ISO standards!
 ```
