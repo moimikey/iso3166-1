@@ -5,15 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Browser Test</title>
   <link rel="stylesheet" href="">
-  <script src="../build/iso3166-1.js"></script>
+  <script src="index.compressed.js"></script>
   <script>
   document.write('<pre><code>')
-  document.write('USA', '   <- to3() -> ', window.ISO3166.from('USA').to3() + '\n')         // USA
-  document.write('USA', '   <- to2() -> ', window.ISO3166.from('USA').to2() + '\n')         // US
-  document.write('USA', '   <- to3() -> ', window.ISO3166.from('US').to3() + '\n')          // USA
-  document.write('USA', '   <- to2() -> ', window.ISO3166.from('US').to2() + '\n')          // US
-  document.write('en-US', ' <- to3() -> ', window.ISO3166.fromLocale('en-US').to3() + '\n') // USA
-  document.write('en-US', ' <- to2() -> ', window.ISO3166.fromLocale('en-US').to2() + '\n') // US  
+  document.write('USA', '   <- to3() -> ', window.iso3166.from('USA').to3() + '\n')         // USA
+  document.write('USA', '   <- to2() -> ', window.iso3166.from('USA').to2() + '\n')         // US
+  document.write('USA', '   <- to3() -> ', window.iso3166.from('US').to3() + '\n')          // USA
+  document.write('USA', '   <- to2() -> ', window.iso3166.from('US').to2() + '\n')          // US
+  document.write('en-US', ' <- to3() -> ', window.iso3166.fromLocale('en-US').to3() + '\n') // USA
+  document.write('en-US', ' <- to2() -> ', window.iso3166.fromLocale('en-US').to2() + '\n') // US  
   document.write('</code></pre>')
   </script>
 </head>
