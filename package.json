@@ -40,6 +40,9 @@
       "brfs"
     ]
   },
+  "browser": {
+    "fs": false
+  },
   "scripts": {
     "build": "browserify index.js > build/iso3166-1.js && cat build/iso3166-1.js | uglifyjs --screw-ie8 -c -m > build/iso3166-1.min.js",
     "generate": "bin/generate",
