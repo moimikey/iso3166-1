@@ -1,4 +1,6 @@
-# iso3166-1
+# iso3166-1 [![Version][npm-version-image]][npm-version-url] [![License][npm-license-image]][npm-license-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![Deps][npm-deps-image]][npm-deps-url] [![DevDeps][npm-devdeps-image]][npm-devdeps-url]
+
+
 The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser. Browserify/Webpack friendly.
 
 ## it's totally small!
@@ -42,3 +44,14 @@ var locale2 = require('locale2')
 iso3166.fromLocale(locale2).to3() // USA
 iso3166.fromLocale(locale2).to2() // US
 ```
+
+[npm-version-url]: https://www.npmjs.com/package/iso3166-1
+[npm-version-image]: https://img.shields.io/npm/v/iso3166-1.svg
+[npm-license-url]: https://github.com/moimikey/iso3166-1/blob/master/LICENSE
+[npm-license-image]: https://img.shields.io/npm/l/iso3166-1.svg
+[npm-downloads-url]: https://www.npmjs.com/package/iso3166-1
+[npm-downloads-image]: https://img.shields.io/npm/dm/iso3166-1.svg
+[npm-deps-url]: https://david-dm.org/moimikey/iso3166-1
+[npm-deps-image]: https://img.shields.io/david/moimikey/iso3166-1.svg
+[npm-devdeps-url]: https://david-dm.org/moimikey/iso3166-1
+[npm-devdeps-image]: https://img.shields.io/david/dev/moimikey/iso3166-1.svg
