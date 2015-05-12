@@ -46,6 +46,7 @@ hyperquest('https://raw.githubusercontent.com/datasets/country-codes/master/data
     cb()
   }))
   .on('data', function(data) {
+    if (data.alpha2.length !== 2 && data.alpha3.length !== 3) return
     countries.push(data)
   })
   .on('end', function() {
