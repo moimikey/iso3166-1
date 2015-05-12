@@ -44,7 +44,11 @@
     "fs": false
   },
   "scripts": {
-    "build": "browserify index.js > build/iso3166-1.js && browserify index.js --standalone iso3166 > build/iso3166-1.global.js && cat build/iso3166-1.js | uglifyjs --screw-ie8 -c -m > build/iso3166-1.min.js",
+    "build-basic": "echo 'Building build/iso3166-1.js...' && browserify index.js &> build/iso3166-1.js",
+    "build-global": "echo 'Building build/iso3166-1.global.js...' && browserify index.js --standalone iso3166 &> build/iso3166-1.global.js",
+    "build-ugly": "echo 'Building build/iso3166-1.min.js...' && cat build/iso3166-1.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.min.js",
+    "build-ugly-global": "echo 'Building build/iso3166-1.global.min.js...' && cat build/iso3166-1.global.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.global.min.js",
+    "build": "echo 'Building iso3166-1...' && npm run build-basic && npm run build-global && npm run build-ugly && npm run build-ugly-global",
     "generate": "bin/generate",
     "test": "jest"
   },
