@@ -21,19 +21,19 @@
   },
   "homepage": "https://github.com/moimikey/iso3166-1",
   "devDependencies": {
-    "csv2": "^0.1.1",
-    "event-stream": "^3.3.0",
-    "file-size": "^1.0.0",
-    "hyperquest": "^1.2.0",
-    "jest-cli": "^0.4.0",
-    "jsonstream2": "^1.1.0",
-    "through2": "^0.6.5"
+    "csv2": "~0.1.1",
+    "event-stream": "~3.3.0",
+    "file-size": "~1.0.0",
+    "hyperquest": "~1.2.0",
+    "jest-cli": "~0.4.0",
+    "jsonstream2": "~1.1.0",
+    "through2": "~2.0.0"
   },
   "optionalDependencies": {
-    "brfs": "^1.4.0",
-    "browserify": "^10.1.3",
-    "uglifyjs": "^2.4.10",
-    "zlib-browserify": "^0.0.3"
+    "brfs": "~1.4.0",
+    "browserify": "~11.0.1",
+    "uglifyjs": "~2.4.10",
+    "zlib-browserify": "~0.0.3"
   },
   "browserify": {
     "transform": [
