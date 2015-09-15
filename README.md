@@ -45,6 +45,14 @@ iso3166.fromLocale(locale2).to3() // USA
 iso3166.fromLocale(locale2).to2() // US
 ```
 
+```
+import iso3166 from 'iso3166-1';
+iso3166.is2('US')  // true
+iso3166.is3('USA') // true
+iso3166.is2('XX')  // false
+iso3166.is3('XXX') // false
+```
+
 [npm-version-url]: https://www.npmjs.com/package/iso3166-1
 [npm-version-image]: https://img.shields.io/npm/v/iso3166-1.svg
 [npm-license-url]: https://github.com/moimikey/iso3166-1/blob/master/LICENSE
