@@ -73,26 +73,28 @@ module.exports = (function iso3166() {
   }
 
   /**
-   * Return true if input is a known ISO 3166-1 alpha-2 code, false otherwise
+   * Return true if input is a known ISO 3166-1 alpha-2
+   * code, false otherwise.
    *
    * @param  {String} alpha2
    * @return {Boolean}
   */
-  var is2 = function is2(code) {
+  var is2 = function is2(alpha2) {
     return ISOCodes.some(function(row) {
-      return row.alpha2 === code
+      return row.alpha2 === alpha2
     })
   }
 
   /**
-   * Return true if input is a known ISO 3166-1 alpha-3 code, false otherwise
+   * Return true if input is a known ISO 3166-1 alpha-3
+   * code, false otherwise.
    *
    * @param  {String} alpha3
    * @return {Boolean}
   */
-  var is3 = function is3(code) {
+  var is3 = function is3(alpha3) {
     return ISOCodes.some(function(row) {
-      return row.alpha3 === code
+      return row.alpha3 === alpha3
     })
   }
 
