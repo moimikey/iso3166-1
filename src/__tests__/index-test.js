@@ -58,4 +58,21 @@ describe('iso3166-1', function() {
   it('returns a list of key/val pairs of country codes', function() {
     expect(typeof iso3166.list()).toBe('object')
   })
+
+  it('returns true if input is a known alpha-2', function() {
+    expect(iso3166.is2('US')).toBe(true)
+  })
+
+  it('returns false if input is not a known alpha-2', function() {
+    expect(iso3166.is2('XX')).toBe(false)
+  })
+
+  it('returns true if input is a known alpha-3', function() {
+    expect(iso3166.is3('USA')).toBe(true)
+  })
+
+  it('returns true if input is not a known alpha-3', function() {
+    expect(iso3166.is3('XYZ')).toBe(false)
+  })
+
 })
