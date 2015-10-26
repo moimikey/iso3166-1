@@ -27,7 +27,7 @@
     "harmonize": "1.4.4",
     "hyperquest": "1.2.0",
     "jest-cli": "0.4.19",
-    "jsonstream2": "1.1.0",
+    "jsonstream2": "1.1.1",
     "through2": "2.0.0"
   },
   "optionalDependencies": {
