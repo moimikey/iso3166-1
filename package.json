@@ -9,12 +9,18 @@
   },
   "keywords": [
     "iso3166",
+    "iso3166-1",
+    "alpha 2",
+    "alpha 3",
+    "iso 3166 alpha",
+    "iso 3166",
     "country",
     "countries",
+    "country code",
     "iso",
     "locale"
   ],
-  "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://michael.hertzberg.co/)",
+  "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://hertzber.gs/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moimikey/iso3166-1/issues"
@@ -45,11 +51,8 @@
     "fs": false
   },
   "scripts": {
-    "build-basic": "echo 'Building build/iso3166-1.js...' && browserify index.js &> build/iso3166-1.js",
-    "build-global": "echo 'Building build/iso3166-1.global.js...' && browserify index.js --standalone iso3166 &> build/iso3166-1.global.js",
-    "build-ugly": "echo 'Building build/iso3166-1.min.js...' && cat build/iso3166-1.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.min.js",
-    "build-ugly-global": "echo 'Building build/iso3166-1.global.min.js...' && cat build/iso3166-1.global.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.global.min.js",
-    "build": "echo 'Building iso3166-1...' && npm run build-basic && npm run build-global && npm run build-ugly && npm run build-ugly-global",
+    "prepublish": "npm run generate && npm run build && npm run test",
+    "build": "browserify src/index.js --full-paths --standalone iso31661 --outfile lib/index.js",
     "generate": "bin/generate",
     "test": "jest"
   },
