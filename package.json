@@ -31,7 +31,7 @@
     "through2": "2.0.0"
   },
   "optionalDependencies": {
-    "brfs": "1.4.1",
+    "brfs": "1.4.2",
     "browserify": "12.0.1",
     "uglifyjs": "2.4.10",
     "zlib-browserify": "0.0.3"
