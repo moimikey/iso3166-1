@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.0 - 11/00/2015
+* first major release & backwards compat!
+- code has now been ported to es2015
+- leverages browserify's `standalone` flag for better import support
+- even smaller build!!!! (verify this)
+- more examples! (make some with iso3166-2 for cross promotion)
+
 ## v0.2.5 - 11/23/2015
 - fixes broken global builds (fixes #23)
 - dependency updates
