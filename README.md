@@ -1,5 +1,5 @@
-# iso3166-1
-[![Version][npm-version-image]][npm-version-url] [![License][npm-license-image]][npm-license-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![Deps][npm-deps-image]][npm-deps-url] [![DevDeps][npm-devdeps-image]][npm-devdeps-url] [![Build Status][drone-build-image]][drone-build-url]
+# iso3166-1 [![Build Status][travis-image]][travis-url]
+[![Version][npm-version-image]][npm-version-url] [![License][npm-license-image]][npm-license-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![Deps][npm-deps-image]][npm-deps-url] [![DevDeps][npm-devdeps-image]][npm-devdeps-url]
 
 The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser. Browserify/Webpack friendly.
 
@@ -63,5 +63,5 @@ iso3166.is3('XXX') // false
 [npm-deps-image]: https://img.shields.io/david/moimikey/iso3166-1.svg
 [npm-devdeps-url]: https://david-dm.org/moimikey/iso3166-1
 [npm-devdeps-image]: https://img.shields.io/david/dev/moimikey/iso3166-1.svg
-[drone-build-image]: https://drone.io/github.com/moimikey/iso3166-1/status.png
-[drone-build-url]: https://drone.io/github.com/moimikey/iso3166-1/latest
+[travis-url]: https://travis-ci.org/moimikey/iso3166-1.svg?branch=master
+[travis-image]: https://travis-ci.org/moimikey/iso3166-1
