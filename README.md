@@ -63,5 +63,5 @@ iso3166.is3('XXX') // false
 [npm-deps-image]: https://img.shields.io/david/moimikey/iso3166-1.svg
 [npm-devdeps-url]: https://david-dm.org/moimikey/iso3166-1
 [npm-devdeps-image]: https://img.shields.io/david/dev/moimikey/iso3166-1.svg
-[travis-url]: https://travis-ci.org/moimikey/iso3166-1.svg?branch=master
-[travis-image]: https://travis-ci.org/moimikey/iso3166-1
+[travis-url]: https://travis-ci.org/moimikey/iso3166-1
+[travis-image]: https://travis-ci.org/moimikey/iso3166-1.svg?branch=master
