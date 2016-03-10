@@ -26,12 +26,12 @@
     "file-size": "1.0.0",
     "harmonize": "1.4.4",
     "hyperquest": "1.3.0",
-    "jest-cli": "0.9.0",
+    "jest-cli": "0.9.1",
     "jsonstream2": "1.1.1",
     "through2": "2.0.1"
   },
   "optionalDependencies": {
-    "brfs": "1.4.2",
+    "brfs": "1.4.3",
     "browserify": "13.0.0",
     "uglifyjs": "2.4.10",
     "zlib-browserify": "0.0.3"
