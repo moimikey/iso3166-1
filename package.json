@@ -28,7 +28,7 @@
     "file-size": "1.0.0",
     "harmonize": "1.4.4",
     "hyperquest": "2.0.0",
-    "jest-cli": "13.1.0",
+    "jest-cli": "13.2.2",
     "jsonstream2": "1.1.1",
     "through2": "2.0.1",
     "uglifyjs": "2.4.10"
