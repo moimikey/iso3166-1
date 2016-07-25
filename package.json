@@ -22,7 +22,7 @@
   "homepage": "https://github.com/moimikey/iso3166-1",
   "devDependencies": {
     "brfs": "1.4.3",
-    "browserify": "13.0.1",
+    "browserify": "13.1.0",
     "csv2": "0.1.1",
     "event-stream": "3.3.4",
     "file-size": "1.0.0",
