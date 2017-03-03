@@ -12,7 +12,7 @@ $ browserify iso3166-1.js | uglifyjs | wc -c | numfmt --to=iec --suffix=B --form
 $ browserify iso3166-1.js | uglifyjs - --screw-ie8 --compress --mangle | yuicompressor --type js -o iso3166-1.js && cat iso3166-1.js | wc -c | numfmt --to=iec --suffix=B --format="%3f"
 51KB
 ```
-## with over 240 countries and completely update to date with ISO standards!
+## with over 240 countries and completely up-to-date with ISO standards!
 ```
 > var countries = require('./countries.json')
 > Object.keys(countries).length
