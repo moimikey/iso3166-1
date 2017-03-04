@@ -40,8 +40,8 @@ hyperquest('https://raw.githubusercontent.com/datasets/country-codes/master/data
   .pipe(csv2())
   .pipe(through2.obj(function(chunk, enc, cb) {
     this.push({
-      alpha2: chunk[2],
-      alpha3: chunk[3]
+      alpha2: chunk[3],
+      alpha3: chunk[4]
     })
     cb()
   }))
