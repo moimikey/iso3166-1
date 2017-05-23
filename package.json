@@ -23,16 +23,16 @@
   "homepage": "https://github.com/moimikey/iso3166-1",
   "devDependencies": {
     "brfs": "1.4.3",
-    "browserify": "14.1.0",
+    "browserify": "14.3.0",
     "csv2": "0.1.1",
     "event-stream": "3.3.4",
     "file-size": "1.0.0",
     "harmonize": "2.0.0",
     "hyperquest": "2.1.2",
-    "jest-cli": "19.0.2",
+    "jest-cli": "20.0.3",
     "jsonstream2": "1.1.1",
     "through2": "2.0.3",
-    "uglifyjs": "2.4.10"
+    "uglifyjs": "2.4.11"
   },
   "dependencies": {
     "zlib-browserify": "0.0.3"
