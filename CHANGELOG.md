@@ -2,7 +2,7 @@
 
 ## v0.3.1 - 08/11/2018
 - removal of gzip compression and instead inlining fs with base64
-  - huge file size reduction (81KB -> 13.3KB)
+  - big file size reduction (81KB -> 67 kB)
 - dependency updates
 
 ## v0.2.5 - 11/23/2015
