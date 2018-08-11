@@ -3,25 +3,14 @@
 
 The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser. Browserify/Webpack friendly.
 
-## it's totally small!
-```
-$ browserify iso3166-1.js | wc -c | numfmt --to=iec --suffix=B --format="%3f"
-81KB
-$ browserify iso3166-1.js | uglifyjs | wc -c | numfmt --to=iec --suffix=B --format="%3f"
-63KB
-$ browserify iso3166-1.js | uglifyjs - --screw-ie8 --compress --mangle | yuicompressor --type js -o iso3166-1.js && cat iso3166-1.js | wc -c | numfmt --to=iec --suffix=B --format="%3f"
-51KB
-```
-## with over 240 countries and completely up-to-date with ISO standards!
-```
-> var countries = require('./countries.json')
-> Object.keys(countries).length
-250
->
-...
+## Install
+
+```bash
+npm install --save iso3166-1
 ```
 
-## example usage
+## Usage
+
 ```
 var iso3166 = require('iso3166-1')
 iso3166.from('USA').to3()         // USA
@@ -52,6 +41,10 @@ iso3166.is3('USA') // true
 iso3166.is2('XX')  // false
 iso3166.is3('XXX') // false
 ```
+
+## License
+
+MIT
 
 [npm-version-url]: https://www.npmjs.com/package/iso3166-1
 [npm-version-image]: https://img.shields.io/npm/v/iso3166-1.svg

@@ -1,12 +1,9 @@
-var read      = require('fs').readFileSync
-var gunzip    = require('zlib-browserify').gunzipSync
-var join      = require('path').join
+const read = require('fs').readFileSync
+const countries = read('data/countries.json')
+const ISOCodes = JSON.parse(countries)
 
-var countries = read(join(__dirname, '../data', '/countries.json.gz'))
-var ISOCodes  = JSON.parse(gunzip(countries).toString())
-
-module.exports = (function iso3166() {
-  var state = ''
+module.exports = (function iso3166 () {
+  let state = ''
 
   /**
    * Convert an ISO 3166-1 alpha-3 code to alpha-2
@@ -14,10 +11,10 @@ module.exports = (function iso3166() {
    * @param  {String} alpha3 USA
    * @return {String}
    */
-  var to2 = function to2(alpha3) {
+  const to2 = function to2 (alpha3) {
     if (alpha3 && alpha3.length > 1) state = alpha3
     if (state.length !== 3) return state
-    return ISOCodes.filter(function(row) {
+    return ISOCodes.filter(function (row) {
       return row.alpha3 === state
     })[0].alpha2
   }
@@ -28,10 +25,10 @@ module.exports = (function iso3166() {
    * @param  {String} alpha2 US
    * @return {String}
    */
-  var to3 = function to3(alpha2) {
+  const to3 = function to3 (alpha2) {
     if (alpha2 && alpha2.length > 1) state = alpha2
     if (state.length !== 2) return state
-    return ISOCodes.filter(function(row) {
+    return ISOCodes.filter(function (row) {
       return row.alpha2 === state
     })[0].alpha3
   }
@@ -43,7 +40,7 @@ module.exports = (function iso3166() {
    * @param  {String} code USA
    * @return {Function}
    */
-  var from = function from(code) {
+  const from = function from (code) {
     if (typeof code !== 'string') return state
     state = code.toUpperCase()
     return this
@@ -56,7 +53,7 @@ module.exports = (function iso3166() {
    * @param  {String} locale en-US
    * @return {Function}
    */
-  var fromLocale = function fromLocale(locale) {
+  const fromLocale = function fromLocale (locale) {
     if (typeof locale !== 'string') return state
     state = locale.split('-').pop().toUpperCase()
     return this
@@ -68,7 +65,7 @@ module.exports = (function iso3166() {
    *
    * @return {Object}
    */
-  var list = function list() {
+  const list = function list () {
     return ISOCodes
   }
 
@@ -79,8 +76,8 @@ module.exports = (function iso3166() {
    * @param  {String} alpha2
    * @return {Boolean}
   */
-  var is2 = function is2(alpha2) {
-    return ISOCodes.some(function(row) {
+  const is2 = function is2 (alpha2) {
+    return ISOCodes.some(function (row) {
       return row.alpha2 === alpha2
     })
   }
@@ -92,19 +89,19 @@ module.exports = (function iso3166() {
    * @param  {String} alpha3
    * @return {Boolean}
   */
-  var is3 = function is3(alpha3) {
-    return ISOCodes.some(function(row) {
+  const is3 = function is3 (alpha3) {
+    return ISOCodes.some(function (row) {
       return row.alpha3 === alpha3
     })
   }
 
   return {
-    to2:        to2,
-    to3:        to3,
-    from:       from,
-    fromLocale: fromLocale,
-    list:       list,
-    is2:        is2,
-    is3:        is3
+    from,
+    fromLocale,
+    is2,
+    is3,
+    list,
+    to2,
+    to3
   }
 })()

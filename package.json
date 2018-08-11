@@ -1,113 +1,81 @@
 {
   "name": "iso3166-1",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Tiny, fast, modular ISO 3166-1 alpha-2/alpha-3 parser.",
   "main": "index.js",
-  "flat": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/moimikey/iso3166-1.git"
   },
   "keywords": [
-    "iso3166",
-    "country",
+    "codes",
     "countries",
+    "country",
+    "countrycode",
+    "countrycodes",
     "iso",
-    "locale"
+    "iso3166",
+    "iso3166-1",
+    "locale",
+    "locale2"
   ],
-  "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://michael.hertzberg.co/)",
+  "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (https://hertzber.gs/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moimikey/iso3166-1/issues"
   },
   "homepage": "https://github.com/moimikey/iso3166-1",
-  "devDependencies": {
-    "brfs": "1.4.3",
-    "browserify": "^14.4.0",
-    "csv2": "0.1.1",
-    "event-stream": "3.3.4",
-    "file-size": "1.0.0",
-    "harmonize": "2.0.0",
-    "hyperquest": "2.1.2",
-    "jest-cli": "^20.0.4",
-    "jsonstream2": "1.1.1",
-    "through2": "2.0.3",
-    "uglifyjs": "^2.4.11"
-  },
-  "dependencies": {
-    "zlib-browserify": "0.0.3"
-  },
-  "browserify": {
-    "transform": [
-      "brfs"
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "dist/**",
+      "data/**"
     ]
   },
-  "browser": {
-    "fs": false
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-minify": "^0.4.3",
+    "babel-plugin-static-fs": "^1.1.0",
+    "babel-preset-env": "^1.7.0",
+    "browserify": "^16.2.2",
+    "csv2": "^0.1.1",
+    "dist-size": "^0.4.0",
+    "event-stream": "^3.3.4",
+    "file-size": "^1.0.0",
+    "hyperquest": "^2.1.3",
+    "jest-cli": "^20.0.4",
+    "jsonstream2": "^1.1.1",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.3",
+    "publish-please": "^3.2.0",
+    "rimraf": "^2.6.2",
+    "standard": "^11.0.1",
+    "through2": "^2.0.3"
   },
   "scripts": {
-    "build-basic": "echo 'Building build/iso3166-1.js...' && browserify index.js &> build/iso3166-1.js",
-    "build-global": "echo 'Building build/iso3166-1.global.js...' && browserify index.js --standalone iso3166 &> build/iso3166-1.global.js",
-    "build-ugly": "echo 'Building build/iso3166-1.min.js...' && cat build/iso3166-1.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.min.js",
-    "build-ugly-global": "echo 'Building build/iso3166-1.global.min.js...' && cat build/iso3166-1.global.js | uglifyjs --screw-ie8 -c -m &> build/iso3166-1.global.min.js",
-    "build": "echo 'Building iso3166-1...' && npm run build-basic && npm run build-global && npm run build-ugly && npm run build-ugly-global",
+    "build": "npm-run-all -s clean mkdir compile minify build:* rmtmp size",
+    "build:dist": "browserify dist/.tmp/iso3166-1.minified.js -o dist/iso3166-1.js",
+    "build:global": "browserify dist/.tmp/iso3166-1.minified.js -s iso3166 -o dist/iso3166-1.global.js",
+    "clean": "rimraf dist",
+    "compile": "babel -o dist/.tmp/iso3166-1.compiled.js src/index.js",
     "generate": "bin/generate",
-    "test": "jest"
+    "lint": "standard src",
+    "mkdir": "mkdirp dist dist/.tmp",
+    "minify": "minify dist/.tmp/iso3166-1.compiled.js -o dist/.tmp/iso3166-1.minified.js",
+    "rmtmp": "rimraf dist/.tmp",
+    "size": "dist-size -e js dist",
+    "test": "jest",
+    "test:browser": "npx serve test-browser",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
   },
   "jest": {
     "rootDir": "src",
     "testPathIgnorePatterns": [
-      "/__tests__/[^/]*/.+",
       "node_modules"
     ]
-  },
-  "resolutions": {
-    "through2": "2.0.3",
-    "defined": "1.0.0",
-    "quote-stream": "1.0.2",
-    "resolve": "1.3.2",
-    "minimist": "1.2.0",
-    "concat-stream": "1.5.2",
-    "duplexer2": "0.1.4",
-    "escodegen": "1.8.1",
-    "readable-stream": "2.2.3",
-    "inherits": "2.0.3",
-    "isarray": "1.0.0",
-    "esutils": "2.0.2",
-    "estraverse": "1.9.3",
-    "esprima": "3.1.3",
-    "source-map": "0.5.6",
-    "acorn": "4.0.11",
-    "object-keys": "1.0.11",
-    "xtend": "4.0.1",
-    "punycode": "1.4.1",
-    "jsonparse": "1.3.0",
-    "convert-source-map": "1.4.0",
-    "json-stable-stringify": "1.0.1",
-    "yargs": "7.1.0",
-    "ansi-styles": "3.0.0",
-    "supports-color": "3.2.3",
-    "async": "2.1.5",
-    "strip-bom": "3.0.0",
-    "wordwrap": "1.0.0",
-    "camelcase": "3.0.0",
-    "cliui": "3.2.0",
-    "webidl-conversions": "4.0.1",
-    "assert-plus": "1.0.0",
-    "fb-watchman": "2.0.0",
-    "bser": "2.0.0",
-    "find-up": "2.1.0",
-    "path-exists": "3.0.0",
-    "string_decoder": "1.0.3",
-    "glob": "7.1.2",
-    "minimatch": "3.0.4",
-    "brace-expansion": "1.1.8",
-    "balanced-match": "1.0.0",
-    "istanbul-lib-coverage": "1.1.1",
-    "istanbul-lib-instrument": "1.7.3",
-    "istanbul-lib-source-maps": "1.2.1",
-    "babylon": "6.17.4",
-    "debug": "2.6.8",
-    "ms": "2.0.0"
   }
 }
