@@ -1,6 +1,6 @@
 {
   "name": "iso3166-1",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Tiny, fast, modular ISO 3166-1 alpha-2/alpha-3 parser.",
   "main": "index.js",
   "repository": {
@@ -57,8 +57,7 @@
   },
   "scripts": {
     "build": "npm-run-all -s clean mkdir compile minify build:* rmtmp size",
-    "build:dist": "browserify dist/.tmp/iso3166-1.minified.js -o dist/iso3166-1.js",
-    "build:global": "browserify dist/.tmp/iso3166-1.minified.js -s iso3166 -o dist/iso3166-1.global.js",
+    "build:dist": "browserify dist/.tmp/iso3166-1.minified.js -s iso31661 -o dist/iso3166-1.js",
     "clean": "rimraf dist",
     "compile": "babel -o dist/.tmp/iso3166-1.compiled.js src/index.js",
     "generate": "bin/generate",

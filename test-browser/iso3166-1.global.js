@@ -1,1 +1,0 @@
-../dist/iso3166-1.global.js

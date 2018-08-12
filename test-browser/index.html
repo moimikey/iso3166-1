@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Browser Test</title>
-  <script src="./iso3166-1.global.js"></script>
+  <script src="./iso3166-1.js"></script>
   <script>
-  console.log('window.iso3166', window.iso3166)
-  console.log('USA', '   <- to3() -> ', window.iso3166.from('USA').to3() + '\n')         // USA
-  console.log('USA', '   <- to2() -> ', window.iso3166.from('USA').to2() + '\n')         // US
-  console.log('USA', '   <- to3() -> ', window.iso3166.from('US').to3() + '\n')          // USA
-  console.log('USA', '   <- to2() -> ', window.iso3166.from('US').to2() + '\n')          // US
-  console.log('en-US', ' <- to3() -> ', window.iso3166.fromLocale('en-US').to3() + '\n') // USA
-  console.log('en-US', ' <- to2() -> ', window.iso3166.fromLocale('en-US').to2() + '\n') // US  
+  console.log('window.iso31661', window.iso31661)
+  console.log('USA', '   <- to3() -> ', window.iso31661.from('USA').to3() + '\n')         // USA
+  console.log('USA', '   <- to2() -> ', window.iso31661.from('USA').to2() + '\n')         // US
+  console.log('USA', '   <- to3() -> ', window.iso31661.from('US').to3() + '\n')          // USA
+  console.log('USA', '   <- to2() -> ', window.iso31661.from('US').to2() + '\n')          // US
+  console.log('en-US', ' <- to3() -> ', window.iso31661.fromLocale('en-US').to3() + '\n') // USA
+  console.log('en-US', ' <- to2() -> ', window.iso31661.fromLocale('en-US').to2() + '\n') // US  
   </script>
 </head>
 <body>

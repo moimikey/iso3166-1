@@ -12,34 +12,34 @@ npm install --save iso3166-1
 ## Usage
 
 ```
-var iso3166 = require('iso3166-1')
-iso3166.from('USA').to3()         // USA
-iso3166.from('USA').to2()         // US
-iso3166.from('US').to3()          // USA
-iso3166.from('US').to2()          // US
-iso3166.fromLocale('en-US').to3() // USA
-iso3166.fromLocale('en-US').to2() // US
+var iso31661 = require('iso3166-1')
+iso31661.from('USA').to3()         // USA
+iso31661.from('USA').to2()         // US
+iso31661.from('US').to3()          // USA
+iso31661.from('US').to2()          // US
+iso31661.fromLocale('en-US').to3() // USA
+iso31661.fromLocale('en-US').to2() // US
 ```
 
 ```
-var iso3166 = require('iso3166-1')
-iso3166.to2('USA') // US
-iso3166.to3('US')  // USA
+var iso31661 = require('iso3166-1')
+iso31661.to2('USA') // US
+iso31661.to3('US')  // USA
 ```
 
 ```
-var iso3166 = require('iso3166-1')
+var iso31661 = require('iso3166-1')
 var locale2 = require('locale2')
-iso3166.fromLocale(locale2).to3() // USA
-iso3166.fromLocale(locale2).to2() // US
+iso31661.fromLocale(locale2).to3() // USA
+iso31661.fromLocale(locale2).to2() // US
 ```
 
 ```
-import iso3166 from 'iso3166-1';
-iso3166.is2('US')  // true
-iso3166.is3('USA') // true
-iso3166.is2('XX')  // false
-iso3166.is3('XXX') // false
+import iso31661 from 'iso3166-1';
+iso31661.is2('US')  // true
+iso31661.is3('USA') // true
+iso31661.is2('XX')  // false
+iso31661.is3('XXX') // false
 ```
 
 ## License
