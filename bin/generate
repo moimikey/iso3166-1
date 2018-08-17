@@ -32,17 +32,13 @@ const json = require('jsonstream2')
 const path = require('path')
 const size = require('file-size')
 const through2 = require('through2')
-const zlib = require('zlib')
 
 const countries = []
 
 hyperquest('https://raw.githubusercontent.com/datasets/country-codes/master/data/country-codes.csv')
   .pipe(csv2())
-  .pipe(through2.obj(function(chunk, enc, cb) {
-    this.push({
-      alpha2: chunk[9],
-      alpha3: chunk[2]
-    })
+  .pipe(through2.obj(function (chunk, _, cb) {
+    this.push({ alpha2: chunk[9], alpha3: chunk[2] })
     cb()
   }))
   .on('data', (data) => {
@@ -52,18 +48,10 @@ hyperquest('https://raw.githubusercontent.com/datasets/country-codes/master/data
   })
   .on('end', () => {
     const outputJson = path.join(__dirname, '../', 'data/countries.json')
-    const outputGzip = path.join(__dirname, '../', 'data/countries.json.gz')
-    es.readArray(countries)
-      .pipe(json.stringify())
-      .pipe(zlib.createGzip())
-      .pipe(fs.createWriteStream(outputGzip))
-      .on('finish', () => {
-        console.log(`OK. Built ${outputGzip} - ${size(fs.statSync(outputGzip).size).human('SI')}`)
-      })
     es.readArray(countries)
       .pipe(json.stringify())
       .pipe(fs.createWriteStream(outputJson))
       .on('finish', () => {
         console.log(`OK. Built ${outputJson} - ${size(fs.statSync(outputJson).size).human('SI')}`)
-    })
+      })
   })
