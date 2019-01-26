@@ -1,4 +1,8 @@
 {
-  "presets": ["env"],
-  "plugins": ["static-fs"]
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "static-fs"
+  ]
 }
