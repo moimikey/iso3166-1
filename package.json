@@ -41,7 +41,7 @@
     "babel-minify": "^0.5.0",
     "babel-plugin-static-fs": "^1.1.0",
     "babel-preset-env": "^1.7.0",
-    "browserify": "^16.2.2",
+    "browserify": "^16.2.3",
     "csv2": "^0.1.1",
     "dist-size": "^0.4.0",
     "event-stream": "^4.0.1",
