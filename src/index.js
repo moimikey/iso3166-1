@@ -14,9 +14,15 @@ module.exports = (function iso3166 () {
   const to2 = function to2 (alpha3) {
     if (alpha3 && alpha3.length > 1) state = alpha3
     if (state.length !== 3) return state
-    return ISOCodes.filter(function (row) {
+    const matchingCodes = ISOCodes.filter(function (row) {
       return row.alpha3 === state
-    })[0].alpha2
+    })
+
+    if (matchingCodes.length > 0) {
+      return matchingCodes[0].alpha2
+    } else {
+      return undefined
+    }
   }
 
   /**
@@ -28,9 +34,15 @@ module.exports = (function iso3166 () {
   const to3 = function to3 (alpha2) {
     if (alpha2 && alpha2.length > 1) state = alpha2
     if (state.length !== 2) return state
-    return ISOCodes.filter(function (row) {
+    const matchingCodes = ISOCodes.filter(function (row) {
       return row.alpha2 === state
-    })[0].alpha3
+    })
+
+    if (matchingCodes.length > 0) {
+      return matchingCodes[0].alpha3
+    } else {
+      return undefined
+    }
   }
 
   /**
