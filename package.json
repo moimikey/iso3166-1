@@ -1,6 +1,6 @@
 {
   "name": "iso3166-1",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "reveal": true,
   "description": "Tiny, fast, modular ISO 3166-1 alpha-2/alpha-3 parser.",
   "main": "index.js",
