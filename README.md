@@ -1,5 +1,9 @@
+<a href="https://unly.org"><img src="https://storage.googleapis.com/unly/images/ICON_UNLY.png" align="right" height="20" alt="Unly logo" title="Unly logo" /></a>
 # iso3166-1 [![Build Status][travis-image]][travis-url]
 [![Version][npm-version-image]][npm-version-url] [![License][npm-license-image]][npm-license-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![Deps][npm-deps-image]][npm-deps-url] [![DevDeps][npm-devdeps-image]][npm-devdeps-url]
+[![Maintainability](https://api.codeclimate.com/v1/badges/09a4296e39b18dc58fe5/maintainability)](https://codeclimate.com/github/UnlyEd/iso3166-1/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/09a4296e39b18dc58fe5/test_coverage)](https://codeclimate.com/github/UnlyEd/iso3166-1/test_coverage)
+[![Known Vulnerabilities](https://snyk.io/test/github/UnlyEd/iso3166-1/badge.svg?targetFile=package.json)](https://snyk.io/test/github/UnlyEd/iso3166-1?targetFile=package.json)
 
 The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser. Browserify/Webpack friendly.
 
@@ -45,6 +49,36 @@ iso31661.is3('XXX') // false
 ## License
 
 MIT
+
+# Vulnerability disclosure
+
+[See our policy](https://github.com/UnlyEd/Unly).
+
+---
+
+# Contributors and maintainers
+
+This project is being maintained by:
+- [Unly] Ambroise Dhenain ([Vadorequest](https://github.com/vadorequest)) **(active)**
+
+---
+
+# **[ABOUT UNLY]** <a href="https://unly.org"><img src="https://storage.googleapis.com/unly/images/ICON_UNLY.png" height="40" align="right" alt="Unly logo" title="Unly logo" /></a>
+
+> [Unly](https://unly.org) is a socially responsible company, fighting inequality and facilitating access to higher education. 
+> Unly is committed to making education more inclusive, through responsible funding for students. 
+We provide technological solutions to help students find the necessary funding for their studies. 
+
+We proudly participate in many TechForGood initiatives. To support and learn more about our actions to make education accessible, visit : 
+- https://twitter.com/UnlyEd
+- https://www.facebook.com/UnlyEd/
+- https://www.linkedin.com/company/unly
+- [Interested to work with us?](https://jobs.zenploy.io/unly/about)
+
+Tech tips and tricks from our CTO on our [Medium page](https://medium.com/unly-org/tech/home)!
+
+#TECHFORGOOD #EDUCATIONFORALL
+
 
 [npm-version-url]: https://www.npmjs.com/package/iso3166-1
 [npm-version-image]: https://img.shields.io/npm/v/iso3166-1.svg
