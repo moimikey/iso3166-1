@@ -3,3 +3,6 @@ test-browser
 data
 bin
 src
+*.nix
+.idea
+yarn.lock

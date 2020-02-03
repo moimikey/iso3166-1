@@ -1,12 +1,12 @@
 {
-  "name": "iso3166-1",
-  "version": "0.5.0",
+  "name": "@unly/iso3166-1",
+  "version": "1.0.2",
   "reveal": true,
   "description": "Tiny, fast, modular ISO 3166-1 alpha-2/alpha-3 parser.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moimikey/iso3166-1.git"
+    "url": "https://github.com/UnlyEd/iso3166-1.git"
   },
   "keywords": [
     "codes",
@@ -22,10 +22,14 @@
   ],
   "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (https://hertzber.gs/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/moimikey/iso3166-1/issues"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
-  "homepage": "https://github.com/moimikey/iso3166-1",
+  "bugs": {
+    "url": "https://github.com/UnlyEd/iso3166-1/issues"
+  },
+  "homepage": "https://github.com/UnlyEd/iso3166-1",
   "standard": {
     "env": [
       "jest"
@@ -55,7 +59,8 @@
     "npm-run-all": "^4.1.3",
     "rimraf": "^2.6.2",
     "standard": "^12.0.1",
-    "through2": "^3.0.0"
+    "through2": "^3.0.0",
+    "version-bump-prompt": "4.2.2"
   },
   "scripts": {
     "build": "npm-run-all -s clean mkdir compile minify build:* rmtmp size",
@@ -66,6 +71,8 @@
     "lint": "standard src",
     "mkdir": "mkdirp dist dist/.tmp",
     "minify": "minify dist/.tmp/iso3166-1.compiled.js -o dist/.tmp/iso3166-1.minified.js",
+    "release": "yarn build && yarn bump --prompt --commit --tag",
+    "releaseAndPublish": "yarn release && npm publish",
     "rmtmp": "rimraf dist/.tmp",
     "size": "dist-size -e js dist",
     "test": "jest",
