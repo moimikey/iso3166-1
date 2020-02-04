@@ -5,6 +5,15 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/09a4296e39b18dc58fe5/test_coverage)](https://codeclimate.com/github/UnlyEd/iso3166-1/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/UnlyEd/iso3166-1/badge.svg?targetFile=package.json)](https://snyk.io/test/github/UnlyEd/iso3166-1?targetFile=package.json)
 
+This project was forked for the following reasons:
+- The main project didn't give any feedback regarding [a bug fix](https://github.com/moimikey/iso3166-1/pull/75) in an acceptable delay (5 months)
+- The main project doesn't provide an up-to-date Changelog (missing v5+)
+- The main project doesn't give us any way of understanding the source code changes ([example](https://github.com/moimikey/iso3166-1/commit/e0eccd9f4f7daa5d7048836462aeafe2daf15ef2)) and there is no way to understand the intended changes whithout spending lots of time to understand the changes
+- Overall, the main project doesn't give proper feedback, lacks transparency, and doesn't make us feel safe from using it in production, so we forked it
+- The forked is used in https://github.com/UnlyEd/universal-language-detector
+
+---
+
 The smallest, fastest, node module for ISO 3166-1 alpha 2/3 helper lookup/parser. Browserify/Webpack friendly.
 
 ## Install
