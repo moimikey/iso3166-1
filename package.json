@@ -76,6 +76,7 @@
     "rmtmp": "rimraf dist/.tmp",
     "size": "dist-size -e js dist",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:browser": "npx serve test-browser"
   },
   "jest": {

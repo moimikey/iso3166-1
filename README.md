@@ -88,15 +88,15 @@ Tech tips and tricks from our CTO on our [Medium page](https://medium.com/unly-o
 
 #TECHFORGOOD #EDUCATIONFORALL
 
-[npm-version-url]: https://www.npmjs.com/package/iso3166-1
-[npm-version-image]: https://img.shields.io/npm/v/iso3166-1.svg
-[npm-license-url]: https://github.com/moimikey/iso3166-1/blob/master/LICENSE
-[npm-license-image]: https://img.shields.io/npm/l/iso3166-1.svg
-[npm-downloads-url]: https://www.npmjs.com/package/iso3166-1
-[npm-downloads-image]: https://img.shields.io/npm/dm/iso3166-1.svg
-[npm-deps-url]: https://david-dm.org/moimikey/iso3166-1
-[npm-deps-image]: https://img.shields.io/david/moimikey/iso3166-1.svg
-[npm-devdeps-url]: https://david-dm.org/moimikey/iso3166-1
-[npm-devdeps-image]: https://img.shields.io/david/dev/moimikey/iso3166-1.svg
-[travis-url]: https://travis-ci.org/moimikey/iso3166-1
-[travis-image]: https://travis-ci.org/moimikey/iso3166-1.svg?branch=master
+[npm-version-url]: https://www.npmjs.com/package/@unly/iso3166-1
+[npm-version-image]: https://img.shields.io/npm/v/@unly/iso3166-1.svg
+[npm-license-url]: https://github.com/UnlyEd/iso3166-1/iso3166-1/blob/master/LICENSE
+[npm-license-image]: https://img.shields.io/npm/l/@unly/iso3166-1.svg
+[npm-downloads-url]: https://www.npmjs.com/package/@unly/iso3166-1
+[npm-downloads-image]: https://img.shields.io/npm/dm/@unly/iso3166-1.svg
+[npm-deps-url]: https://david-dm.org/UnlyEd/iso3166-1
+[npm-deps-image]: https://img.shields.io/david/UnlyEd/iso3166-1.svg
+[npm-devdeps-url]: https://david-dm.org/UnlyEd/iso3166-1
+[npm-devdeps-image]: https://img.shields.io/david/dev/UnlyEd/iso3166-1.svg
+[travis-url]: https://travis-ci.org/unlyEd/iso3166-1
+[travis-image]: https://travis-ci.org/unlyEd/iso3166-1.svg?branch=master
