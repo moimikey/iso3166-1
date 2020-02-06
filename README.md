@@ -98,5 +98,5 @@ Tech tips and tricks from our CTO on our [Medium page](https://medium.com/unly-o
 [npm-deps-image]: https://img.shields.io/david/UnlyEd/iso3166-1.svg
 [npm-devdeps-url]: https://david-dm.org/UnlyEd/iso3166-1
 [npm-devdeps-image]: https://img.shields.io/david/dev/UnlyEd/iso3166-1.svg
-[travis-url]: https://travis-ci.org/unlyEd/iso3166-1
-[travis-image]: https://travis-ci.org/unlyEd/iso3166-1.svg?branch=master
+[travis-url]: https://travis-ci.com/unlyEd/iso3166-1
+[travis-image]: https://travis-ci.com/unlyEd/iso3166-1.svg?branch=master
