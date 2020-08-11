@@ -40,7 +40,7 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^25.1.0",
+    "babel-jest": "^26.3.0",
     "babel-minify": "^0.5.1",
     "babel-plugin-static-fs": "^3.0.0",
     "browserify": "^16.5.0",
