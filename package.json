@@ -43,7 +43,7 @@
     "babel-jest": "^25.1.0",
     "babel-minify": "^0.5.1",
     "babel-plugin-static-fs": "^3.0.0",
-    "browserify": "^16.5.0",
+    "browserify": "^17.0.0",
     "csv2": "^0.1.1",
     "dist-size": "^0.4.0",
     "event-stream": "^4.0.1",
